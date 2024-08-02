@@ -143,6 +143,7 @@ function animateCoinAroundCircle(coin, circle, startAngle) {
   background-image: url("/images/bg.svg");
   background-position: center;
   background-size: contain;
+  background-repeat: no-repeat;
   svg {
     width: 100%;
     height: 100%;
