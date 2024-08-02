@@ -8,15 +8,42 @@
 
 </script>
 <template>
-  <div class="flex flex-col md:grid md:grid-cols-3">
-    <div class="order-1 md:col-span-1">
-      <PageTitle :title="pageTitle" :description="pageDescription" />
-    </div>
-    <div class="order-2 md:col-span-2 flex items-center justify-center">
-      <CoinAnimation />
-    </div>
-    <div class="order-3 md:col-span-1">
-      <ApplyForm />
-    </div>
+  <div class="page-wrap max-w-6xl">
+    <PageTitle class="page-header" :title="pageTitle" :description="pageDescription" />
+    <ApplyForm class="page-form" />
+    <CoinAnimation class="page-animation" />
   </div>
 </template>
+
+<style scoped>
+.page-wrap {
+  display: grid;
+  grid-template-areas:
+    "title"
+    "animation"
+    "form";
+}
+.page-header {
+  grid-area: title;
+}
+.page-form {
+  grid-area: form;
+}
+.page-animation {
+  grid-area: animation;
+}
+@media only screen and (min-width: 768px) {
+  .page-wrap {
+    grid-template-areas:
+    "title animation"
+    "form animation";
+    grid-template-columns: 30% 70%;
+    margin: 0 auto;
+  }
+  .page-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+  }
+}
+</style>
