@@ -24,6 +24,6 @@ export default defineNuxtConfig({
     '~/plugins/gsap.js'
   ],
   app: {
-    baseURL: '/gsap-animation/',
+    baseURL: '/',
   }
 })
